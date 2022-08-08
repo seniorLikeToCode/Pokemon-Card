@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 import Search from './components/search/search';
 import Card  from './components/pokemonCard/card';
 import './App.css';

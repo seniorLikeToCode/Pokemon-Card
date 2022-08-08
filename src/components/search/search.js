@@ -12,10 +12,11 @@ const Search = ({ setData }) => {
     const [searchItem, setSearchItem] = useState("");
 
     const searchHandler = () => {
-        Pokemon.getPokemonByName(searchItem)
+        Pokemon.getPokemonByName(searchItem.toLowerCase())
             .then(function (response) {
                 setData(response);
             }).catch((error) => {
+                console.log(searchItem);
                 console.log(error);
                 setData('')
             });
