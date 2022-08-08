@@ -6,11 +6,6 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState();
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <div className='container'>
       <Search setData={setData} />
