@@ -33,16 +33,16 @@ const Card = ({ data }) => {
                 <h3 className='pokemon-name'>{data.name.charAt(0).toUpperCase() + data.name.slice(1)} </h3>
                 <h2 className='pokemon-heading'>Ability</h2>
                 <div className='pokemon-abilities'>
-                    {data.abilities.map((ability) => {
-                        return <p>{upperCase(ability.ability.name)} </p>
+                        {data.abilities.map((ability, index) => {
+                            return <p key={index} >{upperCase(ability.ability.name)} </p>
 
                     })}
                 </div>
                 <h2 className='pokemon-heading'>Stats</h2>
                 <div className='pokemon-stats'>
                     {
-                        data.stats.map((status) => {
-                            return <div className='flex-centre'>
+                            data.stats.map((status, index) => {
+                                return <div className='flex-centre' key={index}>
                                 <p>{upperCase(status.stat.name)}</p>
                                 <p>{status.base_stat}</p>
                             </div>

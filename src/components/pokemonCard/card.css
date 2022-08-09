@@ -8,7 +8,7 @@
 
 .front-view-details,
 .back-view-details {
-    background-color: antiquewhite;
+    background-color: #dbbde8;
     width: 350px;
     height: 400px;
     padding: 0 20px 0 20px;
@@ -22,7 +22,7 @@
 .pokemon-icon {
     margin-top: 10px;
     margin-left: 90px;
-    width: 140px;   
+    height: 180px;   
 }
 
 .pokemon-name {

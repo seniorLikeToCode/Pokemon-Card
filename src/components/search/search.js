@@ -12,7 +12,7 @@ const Search = ({ setData }) => {
     const [searchItem, setSearchItem] = useState("");
 
     const searchHandler = () => {
-        Pokemon.getPokemonByName(searchItem.toLowerCase())
+        Pokemon.getPokemonByName(searchItem.toLowerCase().trim())
             .then(function (response) {
                 setData(response);
             }).catch((error) => {
@@ -21,7 +21,6 @@ const Search = ({ setData }) => {
                 setData('')
             });
     }
-    // };
 
     return (
         <div className='searchBar'>
@@ -31,8 +30,11 @@ const Search = ({ setData }) => {
                 type='text'
                 value={searchItem}
                 onChange={(e) => { setSearchItem(e.target.value) }}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') document.getElementById('btnSearch').click();
+                }}
             />
-            <button className='btn' type="button" onClick={searchHandler}>Search</button>
+            <button id='btnSearch' className='btn' type="button" onClick={searchHandler}>Search</button>
         </div>
     );
 }
